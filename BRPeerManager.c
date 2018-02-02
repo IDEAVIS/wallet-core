@@ -50,13 +50,15 @@
 #if BITCOIN_TESTNET
 
 static const struct { uint32_t height; const char *hash; uint32_t timestamp; uint32_t target; } checkpoint_array[] = {
-    { 0, "4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0", 1486949366, 0x1e0ffff0 }
+    { 0, "9718937e6208fd2f310cd3e2a7b67ceff2fda0ac4bff443d7f655b7105500cfd", 1513931142, 0x1e0ffff0 },
+    { 10, "08fda666a031ecae8995fef9e0a890ef8dc7102b92bebedf5cfa8cd6f6a40d0b", 1515868925, 0x1e0ffff0 },
+    { 20, "a5b9b2c78263c29626400ecdb7e7d025a7cb577d15e032257b2bdbeca5adb76b", 1515869240, 0x1e0ffff0 }
 };
 
 static const char *dns_seeds[] = {
-    "testnet-seed.ltc.xurious.com.",
+/*    "testnet-seed.ltc.xurious.com.",
     "seed-b.litecoin.loshan.co.uk.",
-    "dnsseed-testnet.thrasher.io."
+    "dnsseed-testnet.thrasher.io."*/
 };
 
 #else // main net
@@ -64,7 +66,10 @@ static const char *dns_seeds[] = {
 // blockchain checkpoints - these are also used as starting points for partial chain downloads, so they need to be at
 // difficulty transition boundaries in order to verify the block difficulty at the immediately following transition
 static const struct { uint32_t height; const char *hash; uint32_t timestamp; uint32_t target; } checkpoint_array[] = {
-    { 0, "12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2", 1317972665, 0x1e0ffff0 },
+    { 0, "9718937e6208fd2f310cd3e2a7b67ceff2fda0ac4bff443d7f655b7105500cfd", 1513931142, 0x1e0ffff0 },
+    { 10, "08fda666a031ecae8995fef9e0a890ef8dc7102b92bebedf5cfa8cd6f6a40d0b", 1515868925, 0x1e0ffff0 },
+    { 20, "a5b9b2c78263c29626400ecdb7e7d025a7cb577d15e032257b2bdbeca5adb76b", 1515869240, 0x1e0ffff0 }
+    /*,
     { 20160, "633036c8df655531c2449b2d09b264cc0b49d945a89be23fd3c1a97361ca198c", 1319798300, 0x1d055262 },
     { 40320, "d148cdd2cf44069cef4b63f0feaf30a8d291ca9ea9ba7e83f226b9738c1d5e9c", 1322522019, 0x1d018053 },
     { 60480, "3250f0a560d55f039c34bfaee1b71297aa5104ac6641778f9a87d73232d12c6c", 1325540574, 0x1d00e848 },
@@ -122,15 +127,15 @@ static const struct { uint32_t height; const char *hash; uint32_t timestamp; uin
     { 993888, "1d80e7793bd9e16e0ce84d93b105d6732ed63e1a6fe491c1b7ea310e75eb504e", 1463613744, 0x1b014cbd },
     { 1001952, "eccbede26ac99ea996377972d5bd05b9306bcc6ac1f4071f1587e3094a704dff", 1464900396, 0x1b01a29e },
     { 1058400, "76ce37c66d449a4ffbfc35674cf932da701066a001dc223754f9250dd2bdbc62", 1473296285, 0x1b013ca7 },
-    { 1260000, "85a22b528d805bf7a641d1d7c6d96ef5054beda3dcab6be7b83f2e3df24b33a8", 1502976600, 0x1a25a0d3 }
+    { 1260000, "85a22b528d805bf7a641d1d7c6d96ef5054beda3dcab6be7b83f2e3df24b33a8", 1502976600, 0x1a25a0d3 }*/
 };
 
 static const char *dns_seeds[] = {
-    "dnsseed.litecointools.com.",
+    /*"dnsseed.litecointools.com.",
     "dnsseed.litecoinpool.org.",
     "seed-a.litecoin.loshan.co.uk.",
     "dnsseed.thrasher.io.",
-    "dnsseed.koin-project.com."
+    "dnsseed.koin-project.com."*/
 };
 
 #endif

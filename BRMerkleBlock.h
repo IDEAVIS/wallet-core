@@ -34,7 +34,7 @@
 #define loaf_log(...) NSLog(__VA_ARGS__)
 #elif defined(__ANDROID__)
 #include <android/log.h>
-#define loaf_log(...) __android_log_print(ANDROID_LOG_ERROR, "loaf", __VA_ARGS__)
+#define loaf_log(...) __android_log_print(ANDROID_LOG_ERROR, "primus", __VA_ARGS__)
 #else
 #include <stdio.h>
 #define loaf_log(...) printf(__VA_ARGS__)
