@@ -67,8 +67,9 @@ static const char *dns_seeds[] = {
 // difficulty transition boundaries in order to verify the block difficulty at the immediately following transition
 static const struct { uint32_t height; const char *hash; uint32_t timestamp; uint32_t target; } checkpoint_array[] = {
     { 0, "9718937e6208fd2f310cd3e2a7b67ceff2fda0ac4bff443d7f655b7105500cfd", 1513931142, 0x1e0ffff0 },
-    { 10, "08fda666a031ecae8995fef9e0a890ef8dc7102b92bebedf5cfa8cd6f6a40d0b", 1515868925, 0x1e0ffff0 },
-    { 20, "a5b9b2c78263c29626400ecdb7e7d025a7cb577d15e032257b2bdbeca5adb76b", 1515869240, 0x1e0ffff0 }
+    { 10, "1d6a844d7c9bec2c9039d7a93496d1fe9ae0bea1438b4187d8371b57a2818a80", 1523545105, 0x1e0ffff0 },
+    { 20, "8978e41ca5fabdcaffe34d606283a75400cdccb8a287e06947d418b94c26ee92", 1523545657, 0x1e0ffff0 },
+    { 50, "b3b1234d06a62911398c87a4ff53a04f006da94aa11731395066a8c218cae02e", 1523550647, 0x1e0ffff0 }
     /*,
     { 20160, "633036c8df655531c2449b2d09b264cc0b49d945a89be23fd3c1a97361ca198c", 1319798300, 0x1d055262 },
     { 40320, "d148cdd2cf44069cef4b63f0feaf30a8d291ca9ea9ba7e83f226b9738c1d5e9c", 1322522019, 0x1d018053 },
