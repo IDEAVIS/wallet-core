@@ -132,7 +132,7 @@ static const struct { uint32_t height; const char *hash; uint32_t timestamp; uin
 };
 
 static const char *dns_seeds[] = {
-    "dnsseed.primsucoin.com"
+    "dnsseed.ideavis.io"
     /*"dnsseed.litecointools.com.",
     "dnsseed.litecoinpool.org.",
     "seed-a.litecoin.loshan.co.uk.",
