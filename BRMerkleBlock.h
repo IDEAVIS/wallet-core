@@ -29,17 +29,6 @@
 #include <stddef.h>
 #include <inttypes.h>
 
-#if defined(TARGET_OS_MAC)
-#include <Foundation/Foundation.h>
-#define loaf_log(...) NSLog(__VA_ARGS__)
-#elif defined(__ANDROID__)
-#include <android/log.h>
-#define loaf_log(...) __android_log_print(ANDROID_LOG_ERROR, "ideavis", __VA_ARGS__)
-#else
-#include <stdio.h>
-#define loaf_log(...) printf(__VA_ARGS__)
-#endif
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -70,9 +59,6 @@ typedef struct {
 
 // returns a newly allocated merkle block struct that must be freed by calling BRMerkleBlockFree()
 BRMerkleBlock *BRMerkleBlockNew(void);
-
-// returns a deep copy of block and that must be freed by calling BRMerkleBlockFree()
-BRMerkleBlock *BRMerkleBlockCopy(const BRMerkleBlock *block);
 
 // buf must contain either a serialized merkleblock or header
 // returns a merkle block struct that must be freed by calling BRMerkleBlockFree()
