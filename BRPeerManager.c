@@ -50,13 +50,11 @@
 #if BITCOIN_TESTNET
 
 static const struct { uint32_t height; const char *hash; uint32_t timestamp; uint32_t target; } checkpoint_array[] = {
-    { 0, "4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0", 1486949366, 0x1e0ffff0 }
+        { 0, "9718937e6208fd2f310cd3e2a7b67ceff2fda0ac4bff443d7f655b7105500cfd", 1513931142, 0x1e0ffff0 },
 };
 
 static const char *dns_seeds[] = {
-    "testnet-seed.ltc.xurious.com.",
-    "seed-b.litecoin.loshan.co.uk.",
-    "dnsseed-testnet.thrasher.io."
+    "dnsseed.ideavis.io",
 };
 
 #else // main net
