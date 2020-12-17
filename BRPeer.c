@@ -463,7 +463,6 @@ static int _BRPeerAcceptHeadersMessage(BRPeer *peer, const uint8_t *msg, size_t 
         peer_log(peer, "Count: %zu | timestap:  %zu", count, timestamp);
 
 //        if (count >= 2000 || (timestamp > 0 && timestamp + 7*24*60*60 + BLOCK_MAX_TIME_DRIFT >= ctx->earliestKeyTime)) {
-            if (1 == 1){
             size_t last = 0;
             time_t now = time(NULL);
             UInt256 locators[2];
@@ -497,11 +496,11 @@ static int _BRPeerAcceptHeadersMessage(BRPeer *peer, const uint8_t *msg, size_t 
                 }
                 else BRMerkleBlockFree(block);
             }
-        }
-        else {
-            peer_log(peer, "non-standard headers message, %zu is fewer header(s) than expected", count);
-            r = 0;
-        }
+//        }
+//        else {
+//            peer_log(peer, "non-standard headers message, %zu is fewer header(s) than expected", count);
+//            r = 0;
+//        }
     }
 
     return r;
