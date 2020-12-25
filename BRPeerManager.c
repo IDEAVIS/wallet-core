@@ -825,12 +825,13 @@ static void _peerConnected(void *info)
 
             BRPeerScheduleDisconnect(peer, PROTOCOL_TIMEOUT); // schedule sync timeout
 
+            // j4hangir: the getheaders doesn't work in Android, resulting in getting 2 locators and lots of "orphan" blocks later down the chain for some reason
             // request just block headers up to a week before earliestKeyTime, and then merkleblocks after that
             // we do not reset connect failure count yet incase this request times out
-            if (manager->lastBlock->timestamp + 7*24*60*60 >= manager->earliestKeyTime) {
+//            if (manager->lastBlock->timestamp + 7*24*60*60 >= manager->earliestKeyTime) {
                 BRPeerSendGetblocks(peer, locators, count, UINT256_ZERO);
-            }
-            else BRPeerSendGetheaders(peer, locators, count, UINT256_ZERO);
+//            }
+//            else BRPeerSendGetheaders(peer, locators, count, UINT256_ZERO);
         }
         else { // we're already synced
             manager->connectFailureCount = 0; // reset connect failure count
@@ -1203,14 +1204,17 @@ static void _peerRelayedBlock(void *info, BRMerkleBlock *block)
     pthread_mutex_lock(&manager->lock);
     prev = BRSetGet(manager->blocks, &block->prevBlock);
 
+
     if (prev) {
         txTime = block->timestamp/2 + prev->timestamp/2;
         block->height = prev->height + 1;
     }
     else
     {
-        peer_log(peer, "no prev");
+        peer_log(peer, "no prev | total: %zu", BRSetCount(manager->blocks));
     }
+    peer_log(peer, "blocks total: %zu", BRSetCount(manager->blocks));
+
 
     // track the observed bloom filter false positive rate using a low pass filter to smooth out variance
     if (peer == manager->downloadPeer && block->totalTx > 0) {
